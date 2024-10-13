@@ -1,0 +1,50 @@
+[project]
+name = "introduction-django-api"
+version = "0.1.0"
+description = "Django API service for introduction project"
+urls = {source = "https://github.com/dvoraj75/introduction-django-api"}
+authors = [
+    {name = "Jan Dvořák", email = "dvoraj75@gmail.com"}
+]
+license = "MIT"
+dependencies = [
+    "django~=4.2.16",
+    "psycopg~=3.2.3"
+]
+readme = "README.md"
+
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "F",
+    "E",
+    "W",
+    "C90",
+    "I",
+    "N",
+    "UP",
+    "S",
+    "B",
+    "A",
+    "DJ",
+    "T20",
+    "ERA",
+    "PL",
+    "RUF"
+]
+extend-ignore = [
+    "RUF012"
+]
+
+[tool.mypy]
+strict = true
+plugins = ["pydantic.mypy", "mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "app_settings.settings"
