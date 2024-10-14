@@ -24,18 +24,25 @@ SECRET_KEY = "django-insecure-!_1%9m6+d6$+#)h9mc5(tmw6oa3p3pa#^9lu5e%(%kz7r-9n%q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["0.0.0.0", "localhost"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+]
 # Application definition
 
 INSTALLED_APPS = [
     "introduction_api.apps.user",
+
+    "rest_framework",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'drf_yasg',
 ]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -103,6 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = "user.User"
 
+SWAGGER_SETTINGS = {
+    "LOGOUT_URL": "/auth/logout",
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

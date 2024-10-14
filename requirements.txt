@@ -9,17 +9,34 @@ annotated-types==0.7.0
 asgiref==3.8.1
     # via django
 django==4.2.16
+    # via
+    #   -r requirements.in
+    #   djangorestframework
+    #   drf-yasg
+djangorestframework==3.15.2
+    # via
+    #   -r requirements.in
+    #   drf-yasg
+drf-yasg==1.21.7
     # via -r requirements.in
 gunicorn==23.0.0
     # via -r requirements.in
+inflection==0.5.1
+    # via drf-yasg
 packaging==24.1
-    # via gunicorn
+    # via
+    #   drf-yasg
+    #   gunicorn
 psycopg==3.2.3
     # via -r requirements.in
 pydantic==2.9.2
     # via -r requirements.in
 pydantic-core==2.23.4
     # via pydantic
+pytz==2024.2
+    # via drf-yasg
+pyyaml==6.0.2
+    # via drf-yasg
 sqlparse==0.5.1
     # via django
 typing-extensions==4.12.2
@@ -27,3 +44,5 @@ typing-extensions==4.12.2
     #   psycopg
     #   pydantic
     #   pydantic-core
+uritemplate==4.1.1
+    # via drf-yasg
